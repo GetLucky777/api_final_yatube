@@ -70,3 +70,7 @@ class Follow(models.Model):
         verbose_name='Автор',
         help_text='Автор, на которого подписываются'
     )
+    models.UniqueConstraint(
+        fields=['user', 'following'],
+        name='unique_follow'
+    )
